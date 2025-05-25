@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yeoh-th.github.io/OPMUN2025crisis/",
+  "homepage": "https://yeoh-th.github.io/opmun2025crisis/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
