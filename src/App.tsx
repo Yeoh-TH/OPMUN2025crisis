@@ -2,7 +2,7 @@
 import './App.css'
 import '@govtechsg/sgds/css/sgds.css';
 import unionJack from './assets/unionJack.webp';
-import { Navbar, Nav, NavDropdown, Footer, Container, Col, Row, Card, NavLink } from '@govtechsg/sgds-react';
+import { Col, Row, Card } from '@govtechsg/sgds-react';
 
 function App() {
 
