@@ -14,8 +14,12 @@ function App() {
           lg="5"
           xs
         >
-          <div style={{ marginBottom: "2vw", width: '100%' }}>
-
+          <div className="topBar">
+            <h1>Singapore 1942</h1>
+            <a className='topBarLinks' href="google form">Directive Form</a>
+            <a className='topBarLinks' href="#/about">About us</a>
+          </div>
+          <div style={{ marginBottom: "2vw", width: '100%', marginTop: '5vw' }}>
             <h1>
               <img src={unionJack} width="60%" style={{ margin: '2vw' }}></img>
               <br />
@@ -28,7 +32,9 @@ function App() {
                 Another Cool Title
               </Card.Title>
               <Card.Text>
-                Some serious crisis update text goes here.<br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p>
+                  Some serious crisis update text goes here.<br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </Card.Text>
               <Card.Link href="#">
                 New link to new thing

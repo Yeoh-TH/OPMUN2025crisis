@@ -1,6 +1,22 @@
 body {
-
     overflow-x: hidden;
+}
+
+.topBar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background-color: burlywood;
+    width: 50%;
+    color: black;
+    text-align: center;
+}
+
+.topBarLinks {
+    padding: 2vw;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 1.5rem;
 }
 
 h1 {
@@ -11,4 +27,16 @@ h1 {
 h2 {
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    font-weight: medium;
+    text-align: justify;
+}
+
+p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
 }
