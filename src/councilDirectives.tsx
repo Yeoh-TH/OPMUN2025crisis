@@ -8,7 +8,7 @@ function councilDirectives() {
     <>
     <div className="topBar">
             <h1>Joint Cabinet Crisis</h1>
-            <a className='topBarLinks' href="/">Updates</a>
+            <a className='topBarLinks' href="#/">Updates</a>
             <a className='topBarLinks' href="link to google form">Directive Form</a>
             <a className='topBarLinks' href="#/editor">Map Editor</a>
             <a className='topBarLinks' href="#/council-directives">Council Directives</a>

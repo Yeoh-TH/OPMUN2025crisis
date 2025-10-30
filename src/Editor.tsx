@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
-import {APIProvider, Map, Pin, AdvancedMarker} from '@vis.gl/react-google-maps';
+import {APIProvider, Map, Pin, AdvancedMarker, InfoWindow} from '@vis.gl/react-google-maps';
+import type { MapMouseEvent } from '@vis.gl/react-google-maps';
 import './App.css'
 import '@govtechsg/sgds/css/sgds.css';
+
 
 type britTroops ={ key: string, location: google.maps.LatLngLiteral }
 const locations: britTroops[] = [
@@ -198,11 +200,24 @@ function Editor(){
     aerial: units.filter(u => u.type === 'aerial').length,
     total: units.length,
   };
+
+const [clickedPosition, setClickedPosition] = useState<google.maps.LatLngLiteral | null>(null);
+
+  const handleMapClick = (event: MapMouseEvent) => {
+    if (event.detail.latLng) {
+      const lat = event.detail.latLng.lat;
+      const lng = event.detail.latLng.lng;
+      setClickedPosition({ lat, lng });
+      console.log('Clicked coordinates:', { lat, lng });
+    }
+  };
+
+
     return(<>
 
     <div className="topBar">
             <h1>Joint Cabinet Crisis</h1>
-            <a className='topBarLinks' href="/">Updates</a>
+            <a className='topBarLinks' href="#/">Updates</a>
             <a className='topBarLinks' href="link to google form">Directive Form</a>
             <a className='topBarLinks' href="#/editor">Map Editor</a>
             <a className='topBarLinks' href="#/council-directives">Council Directives</a>
@@ -274,15 +289,27 @@ function Editor(){
                         <APIProvider apiKey={'AIzaSyDdBGrtXdcOkvVC37W-WoCQIK9TjAwYGUs'} onLoad={() => console.log('Maps API has loaded.')}>
 
                     <Map
-                        
-                        className='map-image'
-                        defaultZoom={11.5}
-                        mapId='DEMO_MAP_ID'
-                        defaultCenter={ { lat: 1.3521, lng: 103.8193
-                         } }>
-
-                    <PoiMarkers pois={locations} />
-                </Map>
+        className='map-image'
+        defaultZoom={11.5}
+        mapId='DEMO_MAP_ID'
+        defaultCenter={{ lat: 1.3521, lng: 103.8193 }}
+        onClick={handleMapClick}
+      >
+        <PoiMarkers pois={locations} />
+        
+        {clickedPosition && (
+          <InfoWindow
+            position={clickedPosition}
+            onCloseClick={() => setClickedPosition(null)}
+          >
+            <div style={{ padding: '8px' }}>
+              <strong>Clicked Location</strong><br />
+              Lat: {clickedPosition.lat.toFixed(6)}<br />
+              Lng: {clickedPosition.lng.toFixed(6)}
+            </div>
+          </InfoWindow>
+        )}
+      </Map>
 
                         </APIProvider>
                 {units.map(unit => (
