@@ -190,6 +190,15 @@ function App() {
             </Map>
 
           </APIProvider>
+          <Card style={{ marginLeft: '2vw', marginRight: '2vw', marginBottom: '4vw' }}>
+
+            <Card.Body>
+              <Card.Title>Haha funny</Card.Title>
+              <Card.Text>
+                This is where the main body of the text goes, when updating, preview on the website to see if this is what u want
+              </Card.Text>
+            </Card.Body>
+            </Card>
 
           <Card style={{ marginLeft: '2vw', marginRight: '2vw', marginBottom: '4vw' }}>
 
