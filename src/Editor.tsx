@@ -262,8 +262,8 @@ function Editor() {
                                 >
                                     <div style={{ padding: '8px' }}>
                                         <strong>Clicked Location</strong><br />
-                                        Lat: {clickedPosition.lat.toFixed(6)}<br />
-                                        Lng: {clickedPosition.lng.toFixed(6)}
+                                        lat: {clickedPosition.lat.toFixed(6)}<br />
+                                        lng: {clickedPosition.lng.toFixed(6)}
                                     </div>
                                 </InfoWindow>
                             )}
